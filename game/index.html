@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emberfall Duel — 3D Card Duel</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="stage">
+  <canvas id="gl" width="1280" height="800"></canvas>
+  <div class="bar" id="topbar">
+    <div class="duelist" id="enemy-box">
+      <div class="who">Rival — Ash Sorcerer</div>
+      <div class="life" id="enemy-life">20 <small>/ 20 LIFE</small></div>
+      <div class="sub" id="enemy-sub">Shield 0 · Hand 4 · Deck 16</div>
+    </div>
+    <div id="turn-banner">
+      <div class="big" id="turn-big">Emberfall Duel</div>
+      <div class="small" id="turn-small">Round 1 · Your hand: 4 cards</div>
+    </div>
+    <div class="duelist" id="energy-box">
+      <div class="who">Your Energy</div>
+      <div id="energy-pips">●●●○○○</div>
+      <div id="energy-label">ENERGY 3 / 3</div>
+    </div>
+  </div>
+  <div id="log"><div class="head">DUEL LOG</div><div id="log-lines"></div></div>
+  <div id="hint">Click a card in your hand to play it · Space = End Turn</div>
+  <div class="bar" id="bottombar">
+    <div class="duelist" id="player-box">
+      <div class="who">You — Ember Knight</div>
+      <div class="life" id="player-life">20 <small>/ 20 LIFE</small></div>
+      <div class="sub" id="player-sub">Shield 0 · Deck 16</div>
+    </div>
+    <button id="end-turn" type="button">End Turn ▶</button>
+  </div>
+  <div class="overlay" id="title-screen">
+    <h1>EMBERFALL DUEL</h1>
+    <p>A 3D card duel on a burning table. Out-burn the Ash Sorcerer before your own flame dies.</p>
+    <p class="rules">Both duelists start at 20 Life with a 20-card deck and a hand of 4. Each round your Energy refills and grows (3 to 6). Strike cards deal damage, Guard raises a Shield that soaks the next hit, Kindling draws cards and stokes Energy, and Wildfire burns the rival for 2 turns. Click a card to play it, then End Turn. First to 0 Life loses.</p>
+    <div class="suits"><span class="s1">◆ STRIKE</span> · <span class="s2">⬢ GUARD</span> · <span class="s3">✦ KINDLING</span> · <span class="s4">▲ WILDFIRE</span></div>
+    <button class="cta" id="start-btn" type="button">Start Duel</button>
+  </div>
+  <div class="overlay hidden" id="end-screen">
+    <h2 id="end-title">VICTORY!</h2>
+    <p id="end-text"></p>
+    <button class="cta" id="again-btn" type="button">Play Again</button>
+  </div>
+</div>
+<script src="three.min.js"></script>
+<script type="module" src="js/ui.js"></script>
+</body>
+</html>
